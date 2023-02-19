@@ -108,24 +108,71 @@
 
 # Запуск
 
-* Запуск контейнера: `docker-compose up` (_должен быть docker-compose.yml в текущей директории_)
-* Запуск db-api: `java -jar db-api.jar & echo $! > ./testserver.pid` (_id процесса сохраняется в файл, чтобы потом проще послать ему сигнал корректно завершиться_)
+* Запуск контейнера:
+```sh
+docker-compose up
+```
+(_должен быть docker-compose.yml в текущей директории_)
+* Запуск db-api:
+```sh
+java -jar db-api.jar & echo $! > ./testserver.pid
+```
+(_id процесса сохраняется в файл, чтобы потом проще послать ему сигнал корректно завершиться_)
 * Для проверки, что все правильно, в браузере пройти по ссылке: "http://localhost:9999/api/cards" (_равносильно отправке GET запроса по этому url_)
 * Для перезапуска:
-  * Завершить приложение: `kill -TERM $(cat ./testserver.pid)`
-  * Остановить контейнер. `docker-compose stop`
-  * Удалить контейнер: `docker-compose rm`
-  * Узнать <IMAGE ID>: `docker image ls --all`
-  * Удалить образ: `docker rmi <IMAGE ID>`
-  * Запустить удаление каталога хранения данных: `sudo rm -R ./data`
+  * Завершить приложение:
+  ```sh
+  kill -TERM $(cat ./testserver.pid)
+  ```
+  * Остановить контейнер.
+  ```sh
+    docker-compose stop
+  ```
+  * Удалить контейнер:
+  ```sh
+    docker-compose rm
+  ```
+  * Узнать <IMAGE ID>:
+  ```sh
+    docker image ls --all
+  ```
+  * Удалить образ:
+  ```sh
+    docker rmi <IMAGE ID>
+  ```
+  * Запустить удаление каталога хранения данных:
+  ```sh
+    sudo rm -R ./data
+  ```
   * Выполнить инструкции запуска.
 
 ### Памятка (_все команды можно получить с помощью --help_)
 
-* Посмотреть все образы: `docker image ls --all`
-* Удалить образ: `docker rmi <IMAGE ID>`
-* Посмотреть все контейнеры: `docker container ls --all`
-* Приостановить контейнер: `docker container pause <CONTAINER ID>`
-* Возобновить работу после приостановки: `docker container pause <CONTAINER ID>`
-* Остановить контейнер: `docker container stop <CONTAINER ID>`
-* Удалить контейнер: `docker rm <CONTAINER ID>`
+* Посмотреть все образы:
+  ```sh
+    docker image ls --all
+  ```
+* Удалить образ:
+  ```sh
+    docker rmi <IMAGE ID>
+  ```
+* Посмотреть все контейнеры:
+  ```sh
+    docker container ls --all
+  ```
+* Приостановить контейнер:
+  ```sh
+    docker container pause <CONTAINER ID>
+  ```
+* Возобновить работу после приостановки:
+  ```sh
+    docker container pause <CONTAINER ID>
+  ```
+* Остановить контейнер:
+  ```sh
+    docker container stop <CONTAINER ID>
+  ```
+* Удалить контейнер:
+  ```sh
+    docker rm <CONTAINER ID>
+  ```
