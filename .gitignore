@@ -3,6 +3,8 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+/data/
+/.idea/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
@@ -41,5 +43,3 @@ bin/
 ### Mac OS ###
 .DS_Store
 /testserver.pid
-/data/
-/.idea/
