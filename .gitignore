@@ -42,3 +42,4 @@ bin/
 .DS_Store
 /testserver.pid
 /data/
+/.idea/
