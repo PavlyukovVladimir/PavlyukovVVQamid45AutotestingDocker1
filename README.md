@@ -154,6 +154,10 @@ java -jar db-api.jar & echo $! > ./testserver.pid
   ```sh
     docker rmi <IMAGE ID>
   ```
+* Удалить ВСЕ ИМЕЮЩИЕСЯ образы:
+  ```sh
+    docker rmi $(docker images --all -q)
+  ```
 * Посмотреть все контейнеры:
   ```sh
     docker container ls --all
@@ -180,5 +184,5 @@ java -jar db-api.jar & echo $! > ./testserver.pid
   ```
 * Удалить все остановленные контейнеры:
   ```sh
-    docker container prune
+    docker container prune --force
   ```
