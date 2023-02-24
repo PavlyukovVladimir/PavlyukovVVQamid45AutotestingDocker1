@@ -174,3 +174,11 @@ java -jar db-api.jar & echo $! > ./testserver.pid
   ```sh
     docker rm <CONTAINER ID>
   ```
+* Остановить контейнеры по шаблону:
+  ```sh
+    docker stop $(docker ps --filter name=reportportal_ -q) 
+  ```
+* Удалить все остановленные контейнеры:
+  ```sh
+    docker container prune
+  ```
